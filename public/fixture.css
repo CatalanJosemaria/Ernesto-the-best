@@ -1,0 +1,227 @@
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ddd;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+}
+
+.container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* Estilos para el encabezado */
+h1 {
+    text-align: center;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 90%; /* Cambiamos el ancho a 80% */
+    max-width: 80rem; /* Establecemos un ancho máximo */
+    margin: 0 auto; /* Centramos la tabla horizontalmente */
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.head-table{
+    text-align: center;
+    background-color: rgb(139, 0, 0);
+
+
+}
+
+/* Estilos para las celdas del encabezado */
+th {
+    padding: 15px;
+    text-align: center;
+    background-color: rgb(139, 0, 0);
+    color: white;
+    border: 1px solid #ddd;
+}
+
+/* Estilos para las celdas de datos */
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Estilos para filas impares */
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para filas al pasar el mouse */
+tr:hover {
+    background-color: #ddd;
+}
+
+
+/* Estilos para la leyenda */
+.legend {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Estilos para los iconos de color */
+.legend span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+.img {
+    align-items: center;
+}
+
+/* Estilos para la columna de nombre del equipo */
+td.nombre-equipo {
+    text-align: left;
+    padding-left: 10px;
+    font-size: 1.2em;
+}
+
+/* Estilos para las imágenes de los escudos */
+.escudo-equipo {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+/* Estilos para los botones */
+.buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+/*botone 1*/
+.ascButton{
+    background-color: #04e678; /* Cambia el color de fondo a violeta claro */
+    border: none; /* Elimina el borde */
+    font-size: 16pt; /* Aumenta el tamaño de la letra */
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 1.5);
+    color: black;
+    
+    
+}
+
+.ascButton:hover {
+    background-color: #00803e; /* Cambia el color de fondo a uno más oscuro */
+    color: rgb(38, 38, 38);
+}
+  
+.ascButton:active {
+    background-color: #00401f; /* Cambia el color de fondo a uno aún más oscuro */
+    color:rgb(102, 0, 0);
+    box-shadow: none;
+}
+
+
+/*botone 2*/
+.descButton{
+    background-color: #04e678; /* Cambia el color de fondo a violeta claro */
+  border: none; /* Elimina el borde */
+  font-size: 16pt; /* Aumenta el tamaño de la letra */
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 1.5);
+  color: black;
+}
+
+.descButton:hover {
+    background-color: #00803e; /* Cambia el color de fondo a uno más oscuro */
+    color: rgb(38, 38, 38);
+}
+  
+.descButton:active {
+    background-color: #00401f; /* Cambia el color de fondo a uno aún más oscuro */
+    color:rgb(112, 0, 6);
+    box-shadow: none;
+}
+
+
+/*botone 3*/
+.alphaButton{
+    background-color: #04e678; /* Cambia el color de fondo a violeta claro */
+    border: none; /* Elimina el borde */
+    font-size: 16pt; /* Aumenta el tamaño de la letra */
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 1.5);
+    color: black;
+}
+
+
+.alphaButton:hover {
+    background-color: #00803e ; /* Cambia el color de fondo a uno más oscuro */
+    color: rgb(38, 38, 38);
+    
+}
+  
+.alphaButton:active {
+    background-color: #00401f ; /* Cambia el color de fondo a uno aún más oscuro */
+    color:rgb(112, 1, 6);
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------RESPONSIVE CHATGPT---------------*/
+/* Estilos para dispositivos pequeños (móviles) */
+@media (max-width: 600px) {
+    .contenedor {
+      width: 100%;
+      padding: 10px;
+      
+    }
+  }
+  
+  /* Estilos para tablets */
+  @media (min-width: 600px) and (max-width: 768px) {
+    .contenedor {
+      width: 90%;
+      padding: 20px;
+    }
+  }
+  
+  /* Estilos para dispositivos grandes (desktops) */
+  @media (min-width: 768px) {
+    .contenedor {
+      width: 80%;
+      padding: 30px;
+      
+    }
+  }

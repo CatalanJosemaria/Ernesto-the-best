@@ -1,0 +1,271 @@
+body {
+    font-family: Times, serif;
+    font-size: 14pt;
+    background-image: url('https://media.traveler.es/photos/63202d627b92b0c099f99e86/master/pass/MO%20Tokyo%203.jpeg');
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 1rem;
+
+}
+
+
+svg.bi {
+    fill: white;
+}
+img.bi{
+    filter: invert(100%); /* Invierte los colores */
+}
+img,svg{
+    vertical-align: middle;
+}
+.fondo-header{
+    background-color: #770000; 
+}
+.escudo-team {
+    max-width: 30px;
+    max-height: 30px;
+}
+.azul { background-color: lightblue; }
+.naranja { background-color: rgb(255, 217, 0); }
+.verde { background-color: lightgreen; }
+.rojo { background-color: lightcoral; }
+.fixture-grid .row {
+    margin-bottom: 10px;
+}
+
+/*--------------------------------------*/
+
+.perfil{
+    background-color: rgb(32, 196, 133);
+    color:aqua;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 5); 
+    max-width: 700px;
+    width: 100%;
+    height: 415px;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Agregado para centrar horizontalmente */
+    position: absolute; /* Agregado para centrar verticalmente */
+    top: 20%;
+    bottom: 15%;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.imagen{
+    flex: 1; /* Ocupa el 50% del ancho */
+    padding: 10px; /* Espacio alrededor de la imagen */
+    height: 5px;
+}
+
+.imagen img{
+    max-width: 100%;
+    height: auto;
+}
+
+.contenido{
+    flex: 1; /* Ocupa el 50% del ancho */
+    padding: 20px; /* Espacio alrededor del contenido */
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    padding-bottom: 20px;
+    margin-left: 40px;
+}
+
+
+
+
+
+
+
+.perfil img {
+    max-width: 50%; /* Ajusta el ancho máximo de la imagen */
+    height: auto; /* Ajusta automáticamente la altura */
+    align-items: end;
+    position: 1;
+}
+
+
+
+.titulo{
+    text-align: center;
+    color: rgb(201, 23, 106);
+    color: #e90052;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 10px; /* Añade espacio dentro del borde para mejorar la apariencia */
+    text-shadow: -5px 2px 8px rgb(113, 2, 78); /* Agrega una sombra blanca */
+    margin-bottom: 120px !important;
+    margin-top: 70px !important;
+    margin-right: 100px !important;
+    margin-left: -25px;
+    /*margin-top: 10%;*/
+}
+
+.titulo:hover{
+    text-shadow: -3px 2px 8px rgb(217, 67, 170); /* Agrega una sombra blanca */
+}
+
+
+.eliminar{
+    background-color: #ff1a1a; /* Cambia el color de fondo a violeta claro */
+  border: none; /* Elimina el borde */
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Cambia la tipografía de la letra */
+  font-size: 10pt; /* Aumenta el tamaño de la letra */
+  border-radius: 5px;
+  padding-top: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 1%;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  margin-left: 40px;
+  margin-right: 60px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 1.5);
+  color: rgb(17, 15, 15);
+  cursor: pointer; 
+}
+
+.eliminar:hover{
+    background-color: #e13b3b; /* Cambia el color de fondo a uno más oscuro */
+    color: rgb(53, 50, 50);
+}
+
+.eliminar:active{
+    background-color: #560202; /* Cambia el color de fondo a uno aún más oscuro */
+    color:rgb(73, 49, 90);
+    box-shadow: none;
+}
+
+
+
+
+
+
+h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    padding-left: 3%;
+    padding-bottom: 0;
+    margin-top: 1%;
+
+}
+
+.contenido span{
+    border: none; /* Elimina el borde */
+  /*background-color: #38003c; */
+  background-color: white;
+  border-radius: 5px; /* Redondea los bordes */
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Cambia la tipografía de la letra */
+  font-size: 16px;
+  padding-top: 10px;
+  padding-right: 50px;
+  padding-left: 10px;
+  padding-bottom: 2px;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 17px;
+  margin-top: 8px;
+  color: #30969a;
+  text-align: center;
+}
+
+.contenido span:hover {
+    background-color: #790000;
+    color: #e6e6e6;
+}
+
+.cards-container{
+    margin-top: 500px; /* Agrega un espacio entre el perfil y las cards */
+    display: flex;
+    flex-wrap: wrap; /* Permite que las cards se envuelvan si no caben en una sola fila */
+    justify-content: center; /* Centra las cards horizontalmente */
+}
+
+
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #f9f9f9;
+    max-width: 90%;
+    margin-bottom: 20px;
+    flex: 1; /* Asegura que las tarjetas crezcan para llenar el espacio disponible */
+    min-width: 300px; /* Asegura que las tarjetas tengan un ancho mínimo */
+}
+
+
+/*-------------dfvsdfvadfva--------------------*/
+
+.hidden{
+    display: none !important;
+}
+
+
+.elegirEquipo {
+    margin-top: 5% !important;
+    margin-left: 2% !important;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+}
+
+#chooseTeamBtn {
+    background-color: #04e644; /* Cambia el color de fondo */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Cambia la tipografía de la letra */
+    font-size: 10pt; /* Aumenta el tamaño de la letra */
+    border-radius: 5px;
+    padding: 1% 2%; /* Ajusta el padding */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 1.5);
+    border: none; /* Elimina el borde */
+    cursor: pointer;
+}
+
+
+
+.logout{
+    position: fixed;
+    margin-right: 8%;
+    margin-left: 92%;
+    margin-top: 1%;
+    position: sticky;
+}
+
+
+.logout input[type="submit"] {
+    position: sticky;
+    bottom: 20px; /* Ajusta este valor según sea necesario */
+    background-color: #2f3330; /* Cambia el color de fondo */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Cambia la tipografía de la letra */
+    font-size: 10pt; /* Aumenta el tamaño de la letra */
+    border-radius: 5px;
+    padding: 10px 20px; /* Ajusta el padding */
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.5);
+    border: none; /* Elimina el borde */
+    color: rgb(133, 128, 128); /* Cambia el color del texto */
+   
+}
+
+.logout input[type="submit"]:hover {
+    background-color: #2600ff; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.logout input[type="submit"]:active {
+    background-color: #038024; /* Cambia el color de fondo al hacer clic */
+    box-shadow: none;
+}
