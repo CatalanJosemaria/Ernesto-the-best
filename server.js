@@ -39,16 +39,14 @@ class UsersBackendServer {
             })(req, res, next);
           });          
 
-        app.get('/api/equipos', authentication.checkAuthenticated, this.fetchJson);
+        app.get('/api/rest', authentication.checkAuthenticated, this.fetchJson);
 
         app.post('/register/', this.doRegister);
 
         app.get('/', authentication.checkAuthenticated, this.goFixture);
         app.get('/buscar', authentication.checkAuthenticated, this.goBuscar);
-        app.post('/api/favorite', authentication.checkAuthenticated, this.guardarEquipo);
 
         app.post('/userDetails', authentication.checkAuthenticated, this.getUserDetails);
-        app.post('/delete/', authentication.checkAuthenticated, this.deleteEquipo);
 
         app.post("/logout", (req, res) => {
             req.logOut(err => console.log(err));
@@ -106,22 +104,6 @@ console.log (hashedRegisterPassword);
         }
     }
 
-    async guardarEquipo(req, res) {
-        const equipoFavorito = req.body.equipoFavorito;
-        const user = req.user.user;
-
-        console.log('Username:', user);
-        console.log('Equipo Favorito:', equipoFavorito);
-
-        const collection = db.collection("encryptedUsers");
-        const query = { user: user };
-        const update = { $set: { equipoFavorito: equipoFavorito } };
-        const params = { upsert: true };
-
-        await collection.updateOne(query, update, params);
-        res.json({ success: true });
-    }
-
     async getUserDetails(req, res) {
         const user = req.user.user;
 
@@ -132,8 +114,7 @@ console.log (hashedRegisterPassword);
             if (userDetails) {
                 res.json({
                     user: userDetails.user,
-                    password: userDetails.password,
-                    equipoFavorito: userDetails.equipoFavorito
+                    password: userDetails.password
                 });
             } else {
                 res.status(404).json({ message: "Detalles del usuario no encontrados" });
@@ -143,27 +124,11 @@ console.log (hashedRegisterPassword);
             res.status(500).send('Error obteniendo detalles del usuario');
         }
     }
+}
 
-    async deleteEquipo(req, res) {
-        const user = req.user.user;
+new UsersBackendServer();
 
-        try {
-            const collection = db.collection('encryptedUsers');
-            const update = { $unset: { equipoFavorito: '' } };
-            const query = { user: user };
 
-            const result = await collection.updateOne(query, update);
-
-            if (result.modifiedCount > 0) {
-                res.json({ success: true });
-            } else {
-                res.status(404).json({ message: 'No se encontró equipo favorito para eliminar' });
-            }
-        } catch (error) {
-            console.error('Error eliminando equipo favorito:', error);
-            res.status(500).send('Error eliminando equipo favorito');
-        }
-    }
 }
 
 new UsersBackendServer();
