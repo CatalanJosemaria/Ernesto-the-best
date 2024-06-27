@@ -1,0 +1,131 @@
+openapi: 3.0.1
+info:
+  title: Users Backend API
+  version: 1.0.0
+  description: API para la gestión de usuarios.
+servers:
+  - url: http://localhost:3000
+paths:
+  /login/:
+    get:
+      summary: Login Page
+      responses:
+        '200':
+          description: Returns the login page
+    post:
+      summary: Authenticate user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Inicio de sesión exitoso.
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Correo electrónico o contraseña incorrectos.
+  /api/rest:
+    get:
+      summary: Fetch JSON data
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Returns a JSON object
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /register/:
+    post:
+      summary: Register new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Successful registration
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+  /:
+    get:
+      summary: Fixture Page
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Returns the fixture page
+  /buscar:
+    get:
+      summary: Buscar Page
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Returns the buscar page
+  /userDetails:
+    post:
+      summary: Get user details
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Returns user details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: string
+                  password:
+                    type: string
+  /logout:
+    post:
+      summary: Logout user
+      responses:
+        '200':
+          description: Successful logout
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
